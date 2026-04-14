@@ -1,0 +1,18 @@
+{
+  "backup_targets": [
+    {
+      "name": "unimatrix-primary",
+      "path": "/mnt/collective/backups",
+      "type": "nfs",
+      "host": "192.168.50.10",
+      "export": "/volume1/docker",
+      "mode": "append_only"
+    }
+  ],
+  "rules": {
+    "append_only": true,
+    "pre_change_required": true,
+    "spot_may_create": true,
+    "spot_may_delete": false
+  }
+}
