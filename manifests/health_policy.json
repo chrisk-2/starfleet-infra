@@ -1,0 +1,19 @@
+{
+  "health_policy": {
+    "checks": [
+      "ping",
+      "ollama_service",
+      "model_availability",
+      "gpu_available"
+    ],
+    "thresholds": {
+      "max_failures": 2,
+      "quarantine_on_fail": true
+    },
+    "recovery": {
+      "attempt_restart": true,
+      "attempt_reassign": true,
+      "requires_manual_after": 3
+    }
+  }
+}
