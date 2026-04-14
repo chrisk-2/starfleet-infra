@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "name": "spot-worker-01",
+      "ip": "192.168.10.10",
+      "role": "general",
+      "gpu": "RTX 3060 12GB",
+      "models": ["mistral:7b", "llama3.1:8b"]
+    },
+    {
+      "name": "spot-worker-02",
+      "ip": "192.168.10.11",
+      "role": "utility",
+      "gpu": "M4000 + GTX1060",
+      "models": ["bge-m3", "nomic-embed-text", "phi3.5"]
+    },
+    {
+      "name": "spot-worker-03",
+      "ip": "192.168.10.13",
+      "role": "heavy",
+      "gpu": "RTX 3060 + GTX1070",
+      "models": ["qwen2.5:14b"]
+    },
+    {
+      "name": "spot-worker-04",
+      "ip": "192.168.10.14",
+      "role": "monitor",
+      "gpu": "TITAN Xp",
+      "models": ["qwen2.5:14b"]
+    }
+  ]
+}
