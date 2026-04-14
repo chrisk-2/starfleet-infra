@@ -1,0 +1,22 @@
+{
+  "roles": {
+    "general": {
+      "preferred_models": ["mistral:7b", "llama3.1:8b"],
+      "max_concurrency": 2
+    },
+    "utility": {
+      "preferred_models": ["bge-m3", "nomic-embed-text", "phi3.5"],
+      "max_concurrency": 3
+    },
+    "heavy": {
+      "preferred_models": ["qwen2.5:14b"],
+      "max_concurrency": 1,
+      "exclusive": true
+    },
+    "monitor": {
+      "preferred_models": ["qwen2.5:14b"],
+      "max_concurrency": 1,
+      "reserved_for": "heartbeat"
+    }
+  }
+}
