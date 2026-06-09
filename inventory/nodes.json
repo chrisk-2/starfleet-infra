@@ -167,7 +167,7 @@
       "role": "nas_storage",
       "os": "Synology DSM",
       "hardware": "DS1621+",
-      "wol": "dsm_control_panel",
+      "wol": "enabled",
       "recovery": "wol_native_dsm"
     },
     "spot-ui-01": {
