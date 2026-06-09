@@ -160,10 +160,15 @@
     },
     "unimatrix6": {
       "ip": "192.168.50.10",
+      "mac": "00:11:32:f0:1d:75",
+      "nic": "eth0",
       "vlan": 50,
       "switch_port": 17,
       "role": "nas_storage",
-      "recovery": "unknown_pending_os_info"
+      "os": "Synology DSM",
+      "hardware": "DS1621+",
+      "wol": "dsm_control_panel",
+      "recovery": "wol_native_dsm"
     },
     "spot-ui-01": {
       "ip": "192.168.10.12",
