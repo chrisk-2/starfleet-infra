@@ -1,25 +1,181 @@
 {
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-06-09",
   "source": "live fleet_ping + network_map_v3",
   "notes": "W-05 and W-06 hardware details unknown - added after network_map_v3",
   "workers": {
-    "spot-worker-01": {"ip":"192.168.10.10","switch_port":5,"role":"general","secondary":["heavy"],"gpu":"RTX 3060 12GB","models":["llama3.1:8b","mistral:7b","qwen2.5-coder:7b","qwen2.5:14b"],"status":"online"},
-    "spot-worker-02": {"ip":"192.168.10.11","switch_port":10,"role":"utility","secondary":["watcher"],"gpu":"M4000 8GB + GTX1060 6GB","models":["bge-m3:latest","mistral:7b","nomic-embed-text:latest"],"status":"online"},
-    "spot-worker-03": {"ip":"192.168.10.13","switch_port":6,"role":"coding","secondary":["heavy"],"gpu":"GTX1070 8GB + RTX3060 12GB","models":["codellama:7b","deepseek-coder:6.7b","qwen2.5-coder:7b","qwen2.5:14b"],"status":"offline","alerts":["ssh_down","service_down"]},
-    "spot-worker-04": {"ip":"192.168.10.14","switch_port":8,"role":"heavy","secondary":[],"gpu":"TITAN Xp 12GB","models":["gemma3:27b","mistral-small:24b","qwen2.5:14b","qwen3:30b-a3b"],"status":"online"},
-    "spot-worker-05": {"ip":"192.168.10.15","switch_port":null,"role":"review","secondary":["heavy","reasoning"],"gpu":"UNKNOWN - needs update","models":["deepseek-r1:14b","deepseek-r1:32b","llama3.1:8b","qwen2.5-coder:14b","qwen2.5-coder:32b","qwen2.5-coder:7b","qwen2.5:14b","qwen2.5:32b"],"status":"online"},
-    "spot-worker-06": {"ip":"192.168.10.16","switch_port":null,"role":"reasoning","secondary":["heavy"],"gpu":"UNKNOWN - needs update","models":["deepseek-r1:32b","qwen2.5-coder:32b","qwen2.5:14b"],"status":"online","latency_note":"slow p50=58316ms"}
+    "spot-worker-01": {
+      "ip": "192.168.10.10",
+      "switch_port": 5,
+      "role": "general",
+      "secondary": [
+        "heavy"
+      ],
+      "gpu": "RTX 3060 12GB",
+      "models": [
+        "llama3.1:8b",
+        "mistral:7b",
+        "qwen2.5-coder:7b",
+        "qwen2.5:14b"
+      ],
+      "status": "online",
+      "mac": "d8:43:ae:a9:c2:4c",
+      "nic": "enp4s0",
+      "wol": "bios_needed"
+    },
+    "spot-worker-02": {
+      "ip": "192.168.10.11",
+      "switch_port": 10,
+      "role": "utility",
+      "secondary": [
+        "watcher"
+      ],
+      "gpu": "M4000 8GB + GTX1060 6GB",
+      "models": [
+        "bge-m3:latest",
+        "mistral:7b",
+        "nomic-embed-text:latest"
+      ],
+      "status": "online",
+      "mac": "d8:cb:8a:3e:94:fa",
+      "nic": "enp3s0",
+      "wol": "bios_needed"
+    },
+    "spot-worker-03": {
+      "ip": "192.168.10.13",
+      "switch_port": 6,
+      "role": "coding",
+      "secondary": [
+        "heavy"
+      ],
+      "gpu": "GTX1070 8GB + RTX3060 12GB",
+      "models": [
+        "codellama:7b",
+        "deepseek-coder:6.7b",
+        "qwen2.5-coder:7b",
+        "qwen2.5:14b"
+      ],
+      "status": "online",
+      "mac": "b4:2e:99:a5:17:ef",
+      "nic": "eno1",
+      "wol": "bios_needed"
+    },
+    "spot-worker-04": {
+      "ip": "192.168.10.14",
+      "switch_port": 8,
+      "role": "heavy",
+      "secondary": [],
+      "gpu": "TITAN Xp 12GB",
+      "models": [
+        "gemma3:27b",
+        "mistral-small:24b",
+        "qwen2.5:14b",
+        "qwen3:30b-a3b"
+      ],
+      "status": "online",
+      "mac": "d8:43:ae:1f:88:2b",
+      "nic": "enp5s0",
+      "wol": "bios_needed"
+    },
+    "spot-worker-05": {
+      "ip": "192.168.10.15",
+      "switch_port": null,
+      "role": "review",
+      "secondary": [
+        "heavy",
+        "reasoning"
+      ],
+      "gpu": "UNKNOWN - needs update",
+      "models": [
+        "deepseek-r1:14b",
+        "deepseek-r1:32b",
+        "llama3.1:8b",
+        "qwen2.5-coder:14b",
+        "qwen2.5-coder:32b",
+        "qwen2.5-coder:7b",
+        "qwen2.5:14b",
+        "qwen2.5:32b"
+      ],
+      "status": "online",
+      "mac": "04:d4:c4:54:cd:6f",
+      "nic": "eno1",
+      "wol": "enabled"
+    },
+    "spot-worker-06": {
+      "ip": "192.168.10.16",
+      "switch_port": null,
+      "role": "reasoning",
+      "secondary": [
+        "heavy"
+      ],
+      "gpu": "UNKNOWN - needs update",
+      "models": [
+        "deepseek-r1:32b",
+        "qwen2.5-coder:32b",
+        "qwen2.5:14b"
+      ],
+      "status": "online",
+      "latency_note": "slow p50=58316ms",
+      "mac": "04:d4:c4:48:43:48",
+      "nic": "eno2",
+      "wol": "bios_needed"
+    }
   },
   "infrastructure": {
-    "spot-core":       {"ip":"192.168.60.30","vlan":60,"switch_port":24,"role":"control_plane"},
-    "starfleet-core":  {"ip":"192.168.60.20","vlan":60,"switch_port":21,"role":"npm_unifi_dns_ntp"},
-    "dns-core":        {"ip":"192.168.60.10","vlan":60,"switch_port":22,"role":"dns_adguard"},
-    "starfleet-tower": {"ip":"192.168.30.5","vlan":30,"switch_port":13,"role":"observability"},
-    "unimatrix6":      {"ip":"192.168.50.10","vlan":50,"switch_port":17,"role":"nas_storage"},
-    "spot-ui-01":      {"ip":"192.168.10.12","vlan":10,"switch_port":7,"role":"dashboard_future_os_kiosk"},
-    "sentinel-core":   {"ip":"192.168.1.3","vlan":1,"role":"proxmox"},
-    "ogre-pc":         {"ip":"192.168.99.150","vlan":99,"switch_port":27,"role":"workstation"}
+    "spot-core": {
+      "ip": "192.168.60.30",
+      "vlan": 60,
+      "switch_port": 24,
+      "role": "control_plane"
+    },
+    "starfleet-core": {
+      "ip": "192.168.60.20",
+      "vlan": 60,
+      "switch_port": 21,
+      "role": "npm_unifi_dns_ntp"
+    },
+    "dns-core": {
+      "ip": "192.168.60.10",
+      "vlan": 60,
+      "switch_port": 22,
+      "role": "dns_adguard"
+    },
+    "starfleet-tower": {
+      "ip": "192.168.30.5",
+      "vlan": 30,
+      "switch_port": 13,
+      "role": "observability"
+    },
+    "unimatrix6": {
+      "ip": "192.168.50.10",
+      "vlan": 50,
+      "switch_port": 17,
+      "role": "nas_storage"
+    },
+    "spot-ui-01": {
+      "ip": "192.168.10.12",
+      "vlan": 10,
+      "switch_port": 7,
+      "role": "dashboard_future_os_kiosk"
+    },
+    "sentinel-core": {
+      "ip": "192.168.1.3",
+      "vlan": 1,
+      "role": "proxmox"
+    },
+    "ogre-pc": {
+      "ip": "192.168.99.150",
+      "vlan": 99,
+      "switch_port": 27,
+      "role": "workstation"
+    }
   },
-  "cleanup": ["192.168.1.11","192.168.1.133","192.168.1.148"],
-  "reserved": {"holodeck":"192.168.20.x","deep_space_9":"192.168.40.x"}
+  "cleanup": [
+    "192.168.1.11",
+    "192.168.1.133",
+    "192.168.1.148"
+  ],
+  "reserved": {
+    "holodeck": "192.168.20.x",
+    "deep_space_9": "192.168.40.x"
+  }
 }
